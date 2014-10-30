@@ -1,0 +1,25 @@
+{
+  "name": "origen",
+  "version": "0.0.1",
+  "description": "Bootstrap tool with express, sass and livereload.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Buti",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^1.0.0",
+    "express": "^4.10.1",
+    "grunt": "^0.4.5"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-open": "^0.2.3",
+    "grunt-sass": "~0.8.1",
+    "grunt-shell": "^1.1.1",
+    "node-sass": "~0.9.3"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "origen",
+  "dependencies": {
+    "foundation": "zurb/bower-foundation"
+  }
+}
