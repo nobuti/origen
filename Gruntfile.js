@@ -8,19 +8,26 @@ module.exports = function(grunt) {
       assets: 'assets/',
       js: 'public/javascripts/vendor/',
       css: 'public/stylesheets/',
+      images: 'public/images/',
+      sass: 'sass/',
       port: 3000
     },
 
     sass: {
-      options: {
-        includePaths: ['assets/foundation/scss']
+      dev: {
+        options: {
+          outputStyle: 'expanded'
+        },
+        files: {
+          'public/stylesheets/ducktypen.css': 'sass/ducktypen.scss'
+        }
       },
       dist: {
         options: {
           outputStyle: 'compressed'
         },
         files: {
-          'public/stylesheets/app.css': 'sass/app.scss'
+          'public/stylesheets/ducktypen.min.css': 'sass/ducktypen.scss'
         }
       }
     },
@@ -41,11 +48,19 @@ module.exports = function(grunt) {
 
       sass: {
         files: ['sass/**/*.scss', 'views/**/*.ejs'],
-        tasks: ['sass'],
+        tasks: ['sass', 'autoprefixer'],
+        options: {
+          livereload: true,
+        }
+      },
+
+      js: {
+        files: ['public/javascripts/**/*.js'],
         options: {
           livereload: true,
         }
       }
+
     },
 
     server: {
@@ -53,12 +68,12 @@ module.exports = function(grunt) {
        base: '.'
     },
 
-    shell: {
-      express: {
-        options: {
-          stdout: true
-        },
-        command: 'node index.js'
+    autoprefixer: {
+      options: {
+        browsers: ['> 1%', 'last 5 versions', 'Firefox ESR', 'Opera 12.1']
+      },
+      no_dest: {
+        src: 'public/stylesheets/ducktypen.css'
       }
     },
 
@@ -81,15 +96,39 @@ module.exports = function(grunt) {
          src: '<%= config.assets %>modernizr/modernizr.js',
          dest: '<%= config.js %>modernizr.js',
          filter: 'isFile'
+       },
+       {
+         expand: false,
+         src: '<%= config.assets %>owl-carousel/owl-carousel/owl.carousel.min.js',
+         dest: '<%= config.js %>owl.carousel.min.js',
+         filter: 'isFile'
+       },
+       {
+         expand: false,
+         src: '<%= config.assets %>owl-carousel/owl-carousel/owl.carousel.css',
+         dest: '<%= config.sass %>vendor/_owl-carousel.scss',
+         filter: 'isFile'
        }]
       }
     },
+
+    sprite: {
+      all: {
+        src: 'sprites/*.png',
+        destImg: 'public/images/sprites.png',
+        destCSS: 'sass/objects/_sprites.scss',
+        imgPath: '/images/sprites.png'
+      }
+    }
+
   });
   
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-open');
+  grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-spritesmith');
 
   grunt.registerTask('express', 'Start a custom web server', function() {
       grunt.log.writeln('Started web server on port 3000');
@@ -101,12 +140,14 @@ module.exports = function(grunt) {
     grunt.log.writeln('- grunt: to show command help');
     grunt.log.writeln('- grunt build: to compile sass');
     grunt.log.writeln('- grunt assets: to copy bower assets to public');
+    grunt.log.writeln('- grunt sprites: to generate the sprite master sheet. Just drop the sprites in assets/sprites and run the task.');
     grunt.log.writeln('- grunt server: to lunch server');
     grunt.log.subhead('You should launch grunt:server in development.');
   });
 
   grunt.registerTask('default', ['help']);
-  grunt.registerTask('build', ['sass']);
+  grunt.registerTask('build', ['sass:dist']);
   grunt.registerTask('assets', ['copy']);
-  grunt.registerTask('server', ['express', 'open:dev', 'watch']);
+  grunt.registerTask('sprites', ['sprite']);
+  grunt.registerTask('server', ['sass:dev', 'express', 'open:dev', 'watch']);
 }
