@@ -1,0 +1,49 @@
+.opinion {
+  text-align: center;
+  background-color: #DBF2FA;
+  padding-top: 15px;
+
+  @include min-screen(600px) {
+    padding-top: 50px;
+  }
+}
+
+.opinion h6 {
+  @include lato-bold;
+  padding-bottom: 45px;
+  color: #2A728E;
+}
+
+.opinion h2 {
+  @include burbank-bold;
+  margin-bottom: 0;
+  padding-bottom: 10px;
+}
+
+.opinion-message {
+  @include lato-light;
+  @include font-size (1.8);
+  color: #358AA2;
+  margin: auto;
+
+  @include min-screen(600px) {
+    @include font-size (2);
+    max-width: 70%;
+    padding-bottom: 40px;
+  }
+}
+
+.action .fancy-button {
+  position: relative;
+  top: -50px;
+  @include font-size (2.2);
+  
+  @include min-screen(600px) {
+    top: -80px;
+  }
+}
+
+.opinion-image {
+  max-width: 100%;
+  max-height: 100%;
+}

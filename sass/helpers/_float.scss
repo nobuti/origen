@@ -1,0 +1,19 @@
+/*
+
+Float
+-----
+
+Float or clear a HTML element.
+
+    <div class="float-left">This is floated left</div>
+    <div class="float-right">This is floated right</div>
+
+*/
+
+.float-left {
+  float: left !important;
+}
+
+.float-right {
+  float: right !important;
+}

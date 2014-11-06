@@ -1,0 +1,50 @@
+/*
+
+Lined up
+--------
+
+It's a pattern when an element is surronded by two lines, usually a button.
+
+<div class="lined-up">
+  <a href="#" class="button">I'm surrended</a>
+</div>
+
+*/
+
+.lined-up {
+  align-items: center;
+  display: block;
+  display: flex;
+  margin: auto;
+}
+
+.flexbox, .flexboxlegacy {
+  
+  .lined-up:after, .lined-up:before {
+    content:'';
+    flex: 1 0 0;
+    border-bottom: 1px solid rgba(0,76,115,0.2);
+    height: 1px;
+  }
+
+  .lined-up.dotted {
+    &:after, &:before {
+      border-bottom: 1px dotted rgba(0,76,115,0.2);
+    }
+  }
+
+  .lined-up.dashed {
+    &:after, &:before {
+      border-bottom: 1px dashed rgba(0,76,115,0.2);
+    }
+  }
+  
+  .lined-up:after {
+    margin-left: 2em;
+  }
+
+  .lined-up:before {
+    margin-right: 2em;
+  }
+}
+

@@ -55,7 +55,8 @@ module.exports = function(grunt) {
       },
 
       js: {
-        files: ['public/javascripts/**/*.js'],
+        files: ['javascripts/**/*.js'],
+        tasks: ['concat'],
         options: {
           livereload: true,
         }
@@ -81,34 +82,56 @@ module.exports = function(grunt) {
       dist: {
        files: [{
          expand: false,
-         src: '<%= config.assets %>jquery/dist/jquery.min.js',
-         dest: '<%= config.js %>jquery.min.js',
+         src: 'node_modules/jquery/dist/jquery.js',
+         dest: 'javascripts/vendor/jquery.js',
          filter: 'isFile'
        },
        {
          expand: false,
-         src: '<%= config.assets %>foundation/js/foundation.min.js',
-         dest: '<%= config.js %>foundation.min.js',
+         src: 'node_modules/modernizr/modernizr.js',
+         dest: 'public/javascripts/modernizr.js',
          filter: 'isFile'
        },
        {
          expand: false,
-         src: '<%= config.assets %>modernizr/modernizr.js',
-         dest: '<%= config.js %>modernizr.js',
+         src: 'node_modules/owl-carousel/owl-carousel/owl.carousel.js',
+         dest: 'javascripts/vendor/owl.carousel.js',
          filter: 'isFile'
        },
        {
          expand: false,
-         src: '<%= config.assets %>owl-carousel/owl-carousel/owl.carousel.min.js',
-         dest: '<%= config.js %>owl.carousel.min.js',
-         filter: 'isFile'
-       },
-       {
-         expand: false,
-         src: '<%= config.assets %>owl-carousel/owl-carousel/owl.carousel.css',
-         dest: '<%= config.sass %>vendor/_owl-carousel.scss',
+         src: 'node_modules/owl-carousel/owl-carousel/owl.carousel.css',
+         dest: 'sass/vendor/_owl-carousel.scss',
          filter: 'isFile'
        }]
+      }
+    },
+
+    concat: {
+      options: {
+        separator: ';',
+      },
+      dist: {
+        src: ['javascripts/vendor/jquery.js', 'javascripts/vendor/owl.carousel.js', 'javascripts/app.js', 'javascripts/module.js'],
+        dest: 'public/javascripts/app.js',
+      },
+    },
+
+    uglify: {
+      options: {
+        mangle: {
+          except: ['jQuery']
+        }
+      },
+      app: {
+        files: {
+          'public/javascripts/app.min.js': ['public/javascripts/app.js']
+        }
+      },
+      modernizr: {
+        files: {
+          'public/javascripts/modernizr.min.js': ['public/javascripts/modernizr.js']
+        }
       }
     },
 
@@ -126,6 +149,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-spritesmith');
@@ -146,8 +171,9 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', ['help']);
-  grunt.registerTask('build', ['sass:dist']);
+  grunt.registerTask('build', ['sass:dist', 'uglify']);
   grunt.registerTask('assets', ['copy']);
   grunt.registerTask('sprites', ['sprite']);
+  grunt.registerTask('pack', ['concat']);
   grunt.registerTask('server', ['sass:dev', 'express', 'open:dev', 'watch']);
 }

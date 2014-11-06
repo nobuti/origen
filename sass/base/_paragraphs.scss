@@ -1,0 +1,16 @@
+/*
+
+Paragraph
+---------
+
+Reset default styles on paragraphs.
+
+*/
+
+p {
+  margin: 0;
+}
+
+p + p {
+  margin-top: 1em;
+}

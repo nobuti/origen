@@ -1,0 +1,93 @@
+/*
+
+Offcanvas navigation menu
+-------------------------
+
+Bottom menu in columns that becomes in offcanvas in devices.
+
+<ul class="nav-offcanvas">
+  <li>
+    <h6>Ducktypen</h6>
+
+    <ul>
+      <li><a href="#">Home</a></li>
+      ...
+    </ul>
+  </li>
+
+  <li>
+    <h6>Help</h6>
+
+    <ul>
+      <li><a href="#">Contact</a></li>
+      ....
+    </ul>
+  </li>
+
+  <li>
+    <h6>Meer over ons</h6>
+
+    <ul>
+      <li><a href="#">Donaldduck</a></li>
+      ....
+    </ul>
+  </li>
+</ul>
+*/
+
+.nav-offcanvas {
+  @extend .justify-columns;
+}
+
+.nav-offcanvas > .column {
+  float: none;
+  width: 100%;
+  
+  & + .column {
+    margin-top: 20px;
+  }
+
+  @include min-screen(1024px) {
+    padding: 90px 0;
+    width: 210px;
+
+    & + .column {
+      margin-top: 0;
+    }
+  }
+
+  @include min-screen(1140px) {
+    &:first-child,
+    &:last-child {
+      width: 420px;
+
+      li {
+        clear: left;
+        float: left;
+        width: 50%;
+      }
+
+      li.break, 
+      li.break ~ li {
+        clear: both;
+        display:inline-block;
+        float: none;
+      }
+    }
+  }
+  
+  h6 {
+    @include burbank-bold;
+    @include font-size(2);
+    margin: 0 0 10px 0;
+
+    @include min-screen(1024px) {
+      margin: 0 0 30px 0;
+    }
+  }
+
+  a {
+    @include lato-regular;
+    @include font-size(1.6);
+  }
+}

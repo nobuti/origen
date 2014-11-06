@@ -1,0 +1,48 @@
+/*
+
+Icons
+-----
+
+Icons classes built on sprites. Use the i tag as acronym of icon. Surprise!
+
+<i class="icon-arrow-left"></i>
+
+*/
+
+[class^="icon"] {
+  @include text-replacement;
+  display: inline-block;
+}
+
+.icon-arrow-down {
+  @include sprite($arrow-down-big);
+}
+
+.icon-arrow-left {
+  @include sprite($arrow-left);
+}
+
+.icon-arrow-right {
+  @include sprite($arrow-right);
+}
+
+.icon-logo-disney {
+  @include sprite($logo-disney);
+  vertical-align: middle;
+}
+
+.icon-logo {
+  @include sprite($logo-small);
+
+  @include min-screen(1024px) {
+    @include sprite($logo);
+  }
+}
+
+.icon-lock {
+  @include sprite($lock);
+}
+
+.icon-scissor {
+  @include sprite($scissors);
+}

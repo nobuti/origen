@@ -1,0 +1,76 @@
+/*
+
+Off canvas
+----------
+
+Off canvas skeleton with css animations to gain performance. We relay in modernizr in order to support animations.
+
+<div class="offcanvas-outer" data-offcanvas>
+  <div class="offcanvas-inner">
+    <div class="content">
+      <a data-offcanvas-trigger class="button offcanvas-handler"></a>
+
+      ...
+
+    </div>
+  </div>
+</div>
+
+*/
+
+.offcanvas-outer {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.offcanvas-inner {
+  left: 0;
+  position: relative;
+  transition: left 0.5s ease;
+  width: 100%;
+
+  .js-open & {
+    left: -70%;
+  }
+}
+
+.offcanvas-sidebar {
+  height: 100%;
+  left: 100%;
+  overflow: scroll;
+  padding: 30px;
+  position: fixed;
+  top: 0;
+  width: 70%;
+    
+  &.is-animated {
+    transition: left 0.5s ease;
+  }
+
+  .js-open & {
+    left: 30%;
+  }
+
+  @include min-screen(1024px) {
+    padding: 0;
+    position: relative;
+    left: 0;
+    width: 100%;
+  }
+}
+
+.offcanvas-handler {
+  @include sprite($hamburguer);
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  transform: translate(0, -50%);
+  z-index: 2;
+
+  @include min-screen(1024px) {
+    display: none;
+  }
+}
+

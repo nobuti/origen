@@ -1,0 +1,96 @@
+/*
+
+Navigation menu
+---------------
+
+Navigation usually means list of links. And we have some flavours using distinct styles.
+
+*/
+
+/*
+
+When used on an `ol` or `ul`, this class throws the list into horizontal mode
+ 
+<ul class=nav>
+  <li><a href=#>Home</a></li>
+  <li><a href=#>About</a></li>
+  <li><a href=#>Portfolio</a></li>
+  <li><a href=#>Contact</a></li>
+</ul>
+
+*/
+
+.nav {
+  @extend %clearfix;
+
+  > li {
+    &, > a {
+      display: inline-block;
+    }
+  }
+}
+
+/*
+
+.nav-stack modifies .nav and throws the list into vertical mode
+
+<ul class="nav nav-stack">
+  <li><a href=#>Home</a></li>
+  <li><a href=#>About</a></li>
+  <li><a href=#>Portfolio</a></li>
+  <li><a href=#>Contact</a></li>
+</ul>
+
+*/
+
+.nav-stack {
+
+  > li {
+    display: list-item;
+    > a {
+      display: block;
+    }
+  }
+}
+
+/*
+
+.nav-banner extends .nav and centres the list
+
+<ul class="nav nav-banner">
+  <li><a href=#>Home</a></li>
+  <li><a href=#>About</a></li>
+  <li><a href=#>Portfolio</a></li>
+  <li><a href=#>Contact</a></li>
+</ul>
+ 
+ */
+
+.nav-banner {
+  text-align:center;
+}
+
+/*
+
+Force a nav to occupy 100% of the available width of its parent.
+
+<ul class="nav nav-fit">
+  <li><a href=#>Home</a></li>
+  <li><a href=#>About</a></li>
+  <li><a href=#>Portfolio</a></li>
+  <li><a href=#>Contact</a></li>
+</ul>
+
+*/
+.nav-fit {
+  display: table;
+  width: 100%;
+
+  > li {
+    display: table-cell;
+
+    > a {
+      display: block;
+    }
+  }
+}

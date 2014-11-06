@@ -1,0 +1,52 @@
+/*
+
+Inside navigation
+-----------------
+
+Fixed vertical navigation list.
+
+<ul class="inside-navigation">
+  <li><a class="nav-bullet" href="#first"></a></li>
+  <li><a class="nav-bullet" href="#second"></a></li>
+  <li><a class="nav-bullet" href="#third"></a></li>
+  <li><a class="nav-bullet" href="#fourth"></a></li>
+</ul>
+
+*/
+
+.inside-navigation {
+  display: none;
+  position: fixed;
+
+  @include min-screen(800px) { 
+    display: block;
+    right: 3%;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  
+}
+
+.inside-navigation li {
+  margin-bottom: 15px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.nav-bullet {
+  background-color: #0a3e5c;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0);
+  display: block;
+  height: 10px;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  width: 10px;
+
+  &.is-selected {
+    background-color: transparent;
+    box-shadow: 0 0 0 2px #0a3e5c;
+  }
+}
+

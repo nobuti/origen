@@ -1,0 +1,153 @@
+/*
+
+Fancy Button
+------------
+
+Embossed 3D-ish button. In two flavours: green and blue. We need to put an span inside to create a new context for z-index. Those gradient border are a pain in the ass.
+
+<a href="#" class="fancy-button fancy-button-green">
+  <span>Cursus Bestellen</span>
+</a>
+
+*/
+
+.fancy-button {
+  @extend .button;
+  @include burbank-bold;
+  @include font-size(2.5);
+  position: relative;
+
+  & span {
+    display: block;
+    position: relative;
+    z-index: 2;
+  }
+  
+  &.big {
+    @include font-size(3);
+  }
+}
+
+.fancy-button:link, 
+.fancy-button:visited {
+  color: white;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none; 
+}
+
+.fancy-button:link span, 
+.fancy-button:visited span {
+  border-radius: 10px;
+  padding: 10px 30px;
+}
+
+.fancy-button:before {
+  background: #fff;
+  border-radius: 15px;
+  bottom: -5px;
+  content: "";
+  display: block;
+  left: -5px;
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  z-index: 1;
+}
+
+.fancy-button-blue:link span,
+.fancy-button-blue:visited span {
+  background-color: #0ca6f2;
+  text-shadow: 0 1px 3px #000;
+}
+
+.fancy-button-blue:link:before,
+.fancy-button-blue:visited:before {
+  background-image: linear-gradient(to bottom, #4AC9FA 0%, #0b95d9 40%);
+  box-shadow: 0px -1px 2px 0 #065881 inset,
+              0px 1px 1px 1px #ccc,
+              0 0 0 5px #fff,
+              0 5px 15px 0 rgba(0,0,0,0.2);
+}
+
+.fancy-button-blue:hover:before {
+  background-image: linear-gradient(to bottom, #4FBEEB 0%, #0082C6 40%);
+}
+
+.fancy-button-blue:active:before {
+  background-color: #0091DC;
+  background-image: none;
+  box-shadow: 0px 1px 2px 0 #444 inset,
+              0 0 0 5px #fff,
+              0 2px 12px 8px #ddd;
+}
+
+.fancy-button-blue:hover span {
+  background-color: #0b94d9; 
+}​
+
+.fancy-button-blue:active span {
+  background-color: #0091DC;
+}
+
+.border-blue:before {
+  background-image: linear-gradient(to bottom, #4AC9FA 0%, #0b95d9 40%);
+  box-shadow: 0px -1px 2px 0 #065881 inset,
+              0px 1px 1px 1px #ccc   
+}
+
+.border-blue:before {
+  background-image: linear-gradient(to bottom, #4AC9FA 0%, #0b95d9 40%);
+  box-shadow: 0px -1px 2px 0 #065881 inset,
+              0px 1px 1px 1px #ccc
+}
+
+.fancy-button-green:link span,
+.fancy-button-green:visited span {
+  background-color: #5EDB2B;
+  text-shadow: 0 1px 3px #000;
+}
+
+.fancy-button-green:hover span {
+  background: #52C126;
+}
+
+.fancy-button-green:active span {
+  background-color: #80d941;
+}
+
+.fancy-button-green:link:before,
+.fancy-button-green:visited:before {
+  background-image: linear-gradient(to bottom, #97E887 0%, #50BD23 40%);
+  box-shadow: 0px -1px 2px 0 #065881 inset,
+              0px 1px 1px 1px #ccc,
+              0 0 0 5px #fff,
+              0 5px 15px 0 rgba(0,0,0,0.2);
+}
+
+.fancy-button-green:hover:before {
+  background-image: linear-gradient(to bottom, #a2d887 0%, #00AD0F 40%);
+}
+
+.fancy-button-green:active:before {
+  background-color: #80d941;
+  background-image: none;
+  box-shadow: 0px 1px 2px 0 #444 inset,
+              0 0 0 5px #fff,
+              0 2px 12px 8px #ddd;
+}
+
+.border-green:before {
+  background-image: linear-gradient(to bottom, #97E887 0%, #50BD23 40%);
+  box-shadow: 0px -1px 2px 0 #065881 inset,
+              0px 1px 1px 1px #ccc
+}
+
+.fancy-button.rounded {
+  border-radius: 50%;
+  padding: 2.5em;
+  
+  &:before {
+    border-radius: 50%;
+  }
+}

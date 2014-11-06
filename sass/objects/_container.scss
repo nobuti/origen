@@ -1,0 +1,22 @@
+/*
+
+Container
+---------
+
+Flexible box centered with max-width.
+
+<div class="container">
+  Hello, I'm a content
+</div>
+
+*/
+
+.container {
+  margin: auto;
+  max-width: 1280px;
+  padding: 0 40px;
+
+  @include min-screen(1280px) {
+    padding: 0;
+  }
+}

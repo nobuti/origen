@@ -1,0 +1,74 @@
+/*
+
+Footer
+------
+
+Styles related to footer components. This is, the real footer and the offcanvas menu when it is static.
+
+*/
+
+.footer-nav {
+  background: rgba(206,230,242,1);
+  background: linear-gradient(to bottom, rgba(206,230,242,1) 0%, rgba(237,246,250,1) 100%);
+}
+
+.footer-holder {
+  background-color: #0a3e5c;
+}
+
+.footer {
+  @include sprite($skyline);
+  @include lato-regular;
+  background-color: rgba(237,246,250,1);
+  color: white;
+  height: auto;
+  min-height: 200px;
+  overflow: hidden;
+  padding-top: 140px;
+  width: 100%;
+  
+  &:after {
+    content:'';
+    display: block;
+    background-color: #0a3e5c;
+    height: 50px;
+  }
+
+  .container {
+    @extend %clearfix;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 25px;
+  }
+
+  .container > * {
+    @include line-height(4.5);
+  }
+}
+
+.footer-language {
+  float: left;
+}
+
+.footer-copy {
+  float: right;
+}
+
+.footer-language, 
+.footer-copy {
+  @include screen(0, 860px) {
+    float: none;
+    text-align: center;
+  }
+}
+
+.footer-disney {
+  text-align: center;
+
+  .icon-logo-disney {
+    margin-left: 20px;
+  }
+
+  @include screen(0, 860px) {
+    display: none;
+  }
+}
