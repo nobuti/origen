@@ -11817,20 +11817,7 @@ if (typeof Object.create !== "function") {
         startDragging : false,
         afterLazyLoad: false
     };
-}(jQuery, window, document));;(function(window){
+}(jQuery, window, document));;var foo = require('./foo.js');
 
-  window.App = {
-    foo: function(){
-      console.log("foo");
-    }
-  }
-
-})(window);(function($, window){
-
-  var App = window.App;
-
-  $(function(){
-    App.foo();
-  });
-
-})($, window)
+foo.logUnderscoreVersion();
+foo.changeBackground();

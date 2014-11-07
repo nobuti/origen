@@ -1,9 +1,4 @@
-(function(window){
+var foo = require('./foo.js');
 
-  window.App = {
-    foo: function(){
-      console.log("foo");
-    }
-  }
-
-})(window)
+foo.logUnderscoreVersion();
+foo.changeBackground();

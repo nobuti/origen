@@ -56,7 +56,6 @@ module.exports = function(grunt) {
 
       js: {
         files: ['javascripts/**/*.js'],
-        tasks: ['concat'],
         options: {
           livereload: true,
         }
@@ -107,34 +106,6 @@ module.exports = function(grunt) {
       }
     },
 
-    concat: {
-      options: {
-        separator: ';',
-      },
-      dist: {
-        src: ['javascripts/vendor/jquery.js', 'javascripts/vendor/owl.carousel.js', 'javascripts/app.js', 'javascripts/module.js'],
-        dest: 'public/javascripts/app.js',
-      },
-    },
-
-    uglify: {
-      options: {
-        mangle: {
-          except: ['jQuery']
-        }
-      },
-      app: {
-        files: {
-          'public/javascripts/app.min.js': ['public/javascripts/app.js']
-        }
-      },
-      modernizr: {
-        files: {
-          'public/javascripts/modernizr.min.js': ['public/javascripts/modernizr.js']
-        }
-      }
-    },
-
     sprite: {
       all: {
         src: 'sprites/*.png',
@@ -149,8 +120,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-spritesmith');
@@ -171,9 +140,8 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', ['help']);
-  grunt.registerTask('build', ['sass:dist', 'uglify']);
+  grunt.registerTask('build', ['sass:dist']);
   grunt.registerTask('assets', ['copy']);
   grunt.registerTask('sprites', ['sprite']);
-  grunt.registerTask('pack', ['concat']);
   grunt.registerTask('server', ['sass:dev', 'express', 'open:dev', 'watch']);
 }
