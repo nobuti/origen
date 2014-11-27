@@ -1,7 +1,6 @@
 {
-  "name": "Ducktypen",
+  "name": "Origen",
   "dependencies": {
-    "modernizr": "latest",
-    "owl-carousel": "~1.3.2"
+    "modernizr": "latest"
   }
 }

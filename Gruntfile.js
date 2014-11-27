@@ -19,7 +19,7 @@ module.exports = function(grunt) {
           outputStyle: 'expanded'
         },
         files: {
-          'public/stylesheets/ducktypen.css': 'sass/ducktypen.scss'
+          'public/stylesheets/origen.css': 'sass/origen.scss'
         }
       },
       dist: {
@@ -27,14 +27,14 @@ module.exports = function(grunt) {
           outputStyle: 'compressed'
         },
         files: {
-          'public/stylesheets/ducktypen.min.css': 'sass/ducktypen.scss'
+          'public/stylesheets/origen.min.css': 'sass/origen.scss'
         }
       }
     },
 
     open : {
       dev : {
-        path: 'http://localhost:3000/',
+        path: 'http://localhost:3000/index',
         app: 'Google Chrome'
       }
     },
@@ -73,7 +73,7 @@ module.exports = function(grunt) {
         browsers: ['> 1%', 'last 5 versions', 'Firefox ESR', 'Opera 12.1']
       },
       no_dest: {
-        src: 'public/stylesheets/ducktypen.css'
+        src: 'public/stylesheets/origen.css'
       }
     },
 
@@ -82,25 +82,13 @@ module.exports = function(grunt) {
        files: [{
          expand: false,
          src: 'node_modules/jquery/dist/jquery.js',
-         dest: 'javascripts/vendor/jquery.js',
+         dest: 'public/javascripts/jquery.js',
          filter: 'isFile'
        },
        {
          expand: false,
          src: 'node_modules/modernizr/modernizr.js',
          dest: 'public/javascripts/modernizr.js',
-         filter: 'isFile'
-       },
-       {
-         expand: false,
-         src: 'node_modules/owl-carousel/owl-carousel/owl.carousel.js',
-         dest: 'javascripts/vendor/owl.carousel.js',
-         filter: 'isFile'
-       },
-       {
-         expand: false,
-         src: 'node_modules/owl-carousel/owl-carousel/owl.carousel.css',
-         dest: 'sass/vendor/_owl-carousel.scss',
          filter: 'isFile'
        }]
       }
