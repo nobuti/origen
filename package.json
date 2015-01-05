@@ -1,6 +1,6 @@
 {
   "name": "origen",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Bootstrap tool with express, sass and livereload.",
   "main": "index.js",
   "scripts": {
@@ -9,11 +9,9 @@
   "author": "Buti",
   "license": "ISC",
   "dependencies": {
-    "backbone": "^1.1.2",
     "ejs": "^1.0.0",
     "express": "^4.10.1",
-    "jquery": "^1.9.1",
-    "underscore": "^1.7.0"
+    "jquery": "^1.9.1"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
