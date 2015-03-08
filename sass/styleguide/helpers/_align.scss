@@ -1,0 +1,34 @@
+/*
+
+Align helper
+------------
+
+Utility class to align inline and inline-blocks elements.
+
+<div class="align-center">
+   I'm a centered text.
+</div>
+
+*/
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-justify {
+    text-align: justify;
+
+    &:after {
+        display: inline-block;
+        content: '';
+        width: 100%;
+    }
+}

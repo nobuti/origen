@@ -1,0 +1,48 @@
+/*
+
+Navigation menu
+---------------
+
+Navigation usually means list of links. And we have some flavours using distinct styles.
+
+<ul class=nav>
+  <li><a href=#>Home</a></li>
+  <li><a href=#>About</a></li>
+  <li><a href=#>Portfolio</a></li>
+  <li><a href=#>Contact</a></li>
+</ul>
+
+*/
+
+// Horizontal
+
+.nav {
+    @extend %clearfix;
+
+    > li {
+        &, > a {
+            display: inline-block;
+        }
+    }
+}
+
+// .nav-banner centres the list
+
+.nav-banner {
+    text-align:center;
+}
+
+// Force a nav to occupy 100% of the available width of its parent.
+
+.nav-fit {
+    display: table;
+    width: 100%;
+
+    > li {
+        display: table-cell;
+
+        > a {
+            display: block;
+        }
+    }
+}

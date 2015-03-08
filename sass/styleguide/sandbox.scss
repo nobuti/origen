@@ -1,0 +1,74 @@
+/*
+
+Sandbox
+-------
+
+This library is divided in the following sections:
+
+1.  Reset removes all the default styles on the page to start building using
+    normalize.
+
+2.  Generic parts that load variables, functions and mixins. Use thisfolder for code that
+    is applied all over the app but it is not specific to a base element or an object.
+
+3.  Helpers and useful chunks of code that do not fit in an object and it is generic enough.
+    If possible, create objects.
+
+4.  Base elements are the building blocks of the page. Paragraphs, lists, images and so on.
+
+5.  Objects refer to each individual block that builds parts of the app.
+
+6.  Layout styles like background colors or images, usually they are refered as sections inside the dom html.
+
+7.  Vendor is code that other Javascript libraries use and do not tend to follow the OOCSS approach.
+
+*/
+
+/* 1. Reset */
+
+@import "base/normalize";
+
+/* 2. Core */
+
+@import "core/settings";
+@import "core/functions";
+@import "core/mixins";
+
+/* 3. Helpers */
+
+@import "helpers/align";
+@import "helpers/clearfix";
+@import "helpers/is-hidden";
+@import "helpers/no-scroll";
+@import "helpers/white-spacing";
+@import "helpers/font-sizes";
+
+
+/* 4. Base */
+
+@import "base/fonts";
+@import "base/global";
+@import "base/lists";
+@import "base/headings";
+@import "base/links";
+@import "base/label";
+@import "base/paragraphs";
+
+/* 5. Objects */
+
+@import "objects/sprites";
+@import "objects/nav";
+@import "objects/button";
+@import "objects/icons";
+@import "objects/media";
+@import "objects/justify-columns";
+
+
+/* 6. Layout */
+
+
+/* 7. Vendor */
+
+
+
+

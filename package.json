@@ -1,6 +1,6 @@
 {
-  "name": "origen",
-  "version": "0.0.1",
+  "name": "Origen",
+  "version": "0.1.0",
   "description": "Bootstrap tool with express, sass and livereload.",
   "main": "index.js",
   "scripts": {
@@ -9,20 +9,26 @@
   "author": "Buti",
   "license": "ISC",
   "dependencies": {
-    "backbone": "^1.1.2",
-    "ejs": "^1.0.0",
-    "express": "^4.10.1",
-    "jquery": "^1.9.1",
-    "underscore": "^1.7.0"
+    "body-parser": "^1.10.0",
+    "nunjucks": "^1.1.0",
+    "express": "^4.10.6",
+    "compression": "~1.4.1"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-autoprefixer": "^1.0.1",
+    "grunt-contrib-clean": "~0.6.0",
     "grunt-contrib-copy": "^0.7.0",
     "grunt-contrib-watch": "~0.5.3",
+    "grunt-modernizr": "^0.6.0",
     "grunt-open": "^0.2.3",
     "grunt-sass": "~0.16.1",
     "grunt-spritesmith": "^2.20.0",
-    "node-sass": "~1.1.4"
+    "grunt-svgstore": "^0.5.0",
+    "grunt-svgmin": "~2.0.0",
+    "node-sass": "~1.1.4",
+    "grunt-contrib-rename": "0.0.3",
+    "grunt-contrib-uglify": "~0.8.0",
+    "grunt-contrib-concat": "~0.5.1"
   }
 }

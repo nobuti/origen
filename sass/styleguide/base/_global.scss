@@ -1,0 +1,53 @@
+/*
+
+Global
+------
+
+General fonts and other global styles of the page.
+
+*/
+
+* {
+    outline-width: 0;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    font-family: "PT Sans", sans-serif;
+    font-size: 62.5%;
+    line-height: $line-size;
+}
+
+html, body {
+    height: 100%;
+    color: $base-color;
+}
+
+body {
+    @include font-size(1.6);
+}
+
+// This is Sass talking to Javascript
+body {
+
+    &:before {
+        display: none;
+        content: 'small';
+    }
+
+    @include min-screen(480px) {
+        &:before {
+            display: none;
+            content: 'tablet';
+        }
+    }
+
+    @include min-screen(800px) {
+        &:before {
+            display: none;
+            content: 'desktop';
+        }
+    }
+}
+

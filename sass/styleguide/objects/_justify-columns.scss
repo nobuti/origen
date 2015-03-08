@@ -1,0 +1,30 @@
+/*
+
+Justified columns
+-----------------
+
+Use this structure to justify columns inside a container.
+
+    <ul class="justify-columns">
+      <li class="column">Left</li>
+      <li class="column">Center</li>
+      <li class="column">Right</li>
+    </ul>
+
+*/
+
+.justify-columns {
+    text-align: justify;
+    width: 100%;
+
+    &:after {
+        content: '';
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+.justify-columns > .column {
+    display: inline-block;
+    vertical-align: top;
+}

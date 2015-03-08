@@ -1,0 +1,36 @@
+<!doctype html>
+<html class="no-js st" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+      {% if title %}
+      {{title}}
+      {% else %}
+      Origen
+      {% endif %}
+    </title>
+    <meta name="description" content="Origen">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stylesheets/sandbox.css" />
+
+    {% if env == "development" %}
+      <script src="//localhost:35729/livereload.js"></script>
+    {% endif %}
+
+  </head>
+  <body>
+
+    {% include "partial/svg-icons.html" %}
+
+    <div class="content">
+
+      {% block maincontent %}
+      {% endblock %}
+
+    </div>
+
+    <script src="/javascript/sandbox.js"></script>
+
+  </body>
+</html>

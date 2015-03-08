@@ -1,0 +1,14 @@
+/*
+
+Is Hidden
+---------
+
+Hides an element, normally remove after some user interaction through javascript.
+
+    <div class="is-hidden">You can't see me!</div>
+
+*/
+
+.is-hidden {
+    display: none;
+}

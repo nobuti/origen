@@ -1,0 +1,26 @@
+/*
+
+Base button
+-----------
+
+Base button to normalize behaviour. It renders the same for links, buttons or inputs type submit. Every other button style should extend this object.
+
+    <input type="submit" value="Submit" class="button">
+    <button type="submit" class="button">Submit</button>
+    <a href=# class="button">Submit</a>
+
+*/
+
+
+.button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 1em;
+    line-height: 1;
+    margin:0;
+    text-decoration: none;
+}

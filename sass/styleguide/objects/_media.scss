@@ -1,0 +1,60 @@
+/*
+
+Media object
+------------
+
+Use this object to show an image and some text rendered in two columns.
+
+<div class="media">
+  <a href="#" class="media-image">
+    <img src="https://en.gravatar.com/userimage/294649/ecfe4df3dba5f939710d657157924d28.jpeg" alt="Megaman" />
+  </a>
+  <div class="media-body">
+    <p><strong>This is a media object (vertical-align: middle)</strong></p>
+    <p>Bacon ipsum dolor sit amet shankle swine cow, shoulder brisket pork belly leberkas tail ham shank beef ribs. Shankle jowl brisket beef filet mignon ribeye frankfurter pork loin tongue short ribs corned beef venison tenderloin. Pork loin swine hamburger, turducken tail boudin shoulder doner pig flank meatloaf ham pancetta t-bone shank.</p>
+  </div>
+</div>
+
+*/
+
+.media {
+    display: table;
+    width: 100%;
+
+    &.is-inline {
+        display: inline-table;
+        vertical-align: top;
+    }
+}
+
+.media-image,
+.media-body {
+    display: table-cell;
+    vertical-align: middle;
+
+    .align-top & {
+        vertical-align: top;
+    }
+
+    .align-bottom & {
+        vertical-align: bottom;
+    }
+}
+
+.media-image {
+    padding-right: 1rem;
+
+    img {
+        display: block;
+        max-width: none;
+    }
+
+    .reversed & {
+        padding-right: 0;
+        padding-left: 1rem;
+    }
+}
+
+.media-body {
+    width: 100%;
+}

@@ -1,0 +1,208 @@
+/*
+
+Disabled cursor
+---------------
+
+  div.disabled {
+    @include disable-select;
+  }
+
+*/
+
+@mixin disable-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    cursor: default;
+}
+
+/*
+
+Forbidden cursor
+----------------
+
+  div.forbidden {
+    @include forbidden-select;
+  }
+
+*/
+
+@mixin forbidden-select {
+    -webkit-user-select: not-allowed;
+    -moz-user-select: not-allowed;
+    cursor: not-allowed;
+}
+
+
+/*
+
+Center-align a block level element
+----------------------------------
+
+  .footer-wrap {
+    width: 450px;
+    @include center-block;
+  }
+
+ */
+
+@mixin center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*
+
+Text overflow
+-------------
+
+  .text-truncate {
+    @include text-truncate;
+  }
+
+ */
+
+@mixin text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/*
+
+Absolute positioned
+-------------------
+
+  .abs {
+    @include abs-pos(10px, 10px, 5px, 15px);
+  }
+
+ */
+
+@mixin abs-pos($top: auto, $right: auto, $bottom: auto, $left: auto) {
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    position: absolute;
+}
+
+
+/*
+
+Font Size in rem with px fallback
+---------------------------------
+
+  body {
+    @include font-size(16);
+  }
+
+ */
+
+@mixin font-size($sizeValue: 1.6) {
+    font-size: ($sizeValue * 10) + px;
+    font-size: $sizeValue + rem;
+}
+
+/*
+
+Line Height in rem with px fallback
+-----------------------------------
+
+  body {
+    @include line-height (16);
+  }
+
+ */
+
+@mixin line-height($heightValue: 1.6){
+    line-height: ($heightValue * 10)+ px;
+    line-height: $heightValue + rem;
+}
+
+
+/*
+
+Text replacement (instead of text-indent)
+-----------------------------------------
+
+  .header h1 {
+    @include text-replacement;
+  }
+
+ */
+
+@mixin text-replacement {
+    border: 0;
+    color: transparent;
+    font: 0/0 a;
+    text-shadow: none;
+}
+
+
+/*
+
+Placeholder
+-----------
+
+  input{
+    @include placeholder-color(#FA4A4A)
+  }
+
+ */
+
+@mixin placeholder-color($color) {
+    &.placeholder {
+        color: $color
+    }
+
+    &:-moz-placeholder {
+        color: $color
+    }
+
+    &::-webkit-input-placeholder {
+        color: $color
+    }
+
+    &:-ms-input-placeholder {
+        color: $color
+    }
+}
+
+
+/*
+
+Responsive mixin
+----------------
+
+  @include screen(768, 1280) {
+    background: black;
+  }
+
+  @include min-screen(320) {
+    width: 300px;
+  }
+
+*/
+
+$units: 1px !default;
+
+@mixin screen($res-first, $res-last: $res-first) {
+    @if $res-first == $res-last {
+        @media screen and ( max-width: if(unitless($res-first), $res-first*$units, $res-first) ) {
+            @content;
+        }
+    } @else if $res-first < $res-last {
+        @media screen and ( min-width: if(unitless($res-first), $res-first*$units, $res-first) ) and ( max-width: if(unitless($res-last), $res-last*$units, $res-last) ) {
+            @content;
+        }
+    }
+}
+
+@mixin min-screen($res) {
+    @media screen and ( min-width: if(unitless($res), $res*$units, $res) ) {
+        @content;
+    }
+}
