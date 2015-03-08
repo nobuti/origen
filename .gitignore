@@ -1,6 +1,4 @@
 *.DS_Store
-/css/*
-/assets/*
 /node_modules/*
-/public/javascripts/vendor/*
+/public/javascripts/*
 /public/stylesheets/*
