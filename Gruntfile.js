@@ -19,7 +19,7 @@ module.exports = function(grunt) {
           outputStyle: 'expanded'
         },
         files: {
-          'public/stylesheets/sandbox.css': 'sass/styleguide/sandbox.scss'
+          'public/stylesheets/sandbox.css': 'sass/sandbox/sandbox.scss'
         }
       },
       dist: {
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
           outputStyle: 'compressed'
         },
         files: {
-          'public/stylesheets/sandbox.css': 'sass/styleguide/sandbox.scss'
+          'public/stylesheets/sandbox.css': 'sass/sandbox/sandbox.scss'
         }
       }
     },
