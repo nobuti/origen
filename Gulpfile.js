@@ -9,6 +9,7 @@ var clean = require('gulp-clean'),
   autoprefixer = require('gulp-autoprefixer'),
   sass = require('gulp-sass'),
   gutil = require('gulp-util'),
+  minify = require('gulp-minify-css'),
   nunjucksRender = require('gulp-nunjucks-render'),
   browserSync = require('browser-sync').create(),
   reload = browserSync.reload,
@@ -83,19 +84,19 @@ gulp.task('optim', ['images'], function() {
 });
 
 gulp.task('uglify', ['browserify'], function() {
-  return gulp.src('public/javascript/*.js')
+  return gulp.src('public/javascripts/*.js')
     .pipe(uglify())
-    .pipe(gulp.dest('public/javascript/'));
+    .pipe(gulp.dest('public/javascripts/'));
 });
 
 gulp.task('minify', ['styles'], function() {
   return gulp.src('public/stylesheets/*.css')
-    .pipe(minifyCSS())
+    .pipe(minify())
     .pipe(gulp.dest('public/stylesheets/'));
 });
 
 gulp.task('dev', ['layout', 'styles', 'browserify', 'images', 'browser-sync', 'watch']);
-gulp.task('build', ['layout', 'miniy', 'uglify', 'optim']);
+gulp.task('build', ['layout', 'minify', 'uglify', 'optim']);
 
 gulp.task('default', ['clean'], function() {
   gulp.start('dev');
