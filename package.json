@@ -4,7 +4,7 @@
   "description": "Bemate playground",
   "main": "",
   "scripts": {
-    "deploy": "gulp build && sh deploy.sh && exit 0"
+    "deploy": "sh deploy.sh"
   },
   "repository": {
     "type": "git",

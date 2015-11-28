@@ -10,6 +10,6 @@ function Foo() {
   });
 
   this.after("initialize", function() {
-    console.log(this.attr.option);
+    console.log("Awesome " + this.attr.option);
   });
 }
