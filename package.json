@@ -31,6 +31,9 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "basic-auth": "^1.0.3",
+    "compression": "^1.6.0",
+    "express": "^4.13.3",
     "jquery": "^2.1.4"
   }
 }
