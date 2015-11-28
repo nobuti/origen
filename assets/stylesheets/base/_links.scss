@@ -1,0 +1,17 @@
+/*
+
+Link
+----
+
+Links styles.
+
+*/
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
