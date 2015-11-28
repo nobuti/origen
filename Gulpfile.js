@@ -43,12 +43,12 @@ gulp.task('clean', function() {
 //Dev tasks
 gulp.task('browserify', function() {
   return browserify({
-        entries: 'assets/javascripts/application.js',
-        paths: ['./node_modules', './assets/javascripts']
-      })
-      .bundle()
-      .pipe(source('bundle.js'))
-      .pipe(gulp.dest('public/javascripts/'));
+      entries: 'assets/javascripts/application.js',
+      paths: ['./node_modules', './assets/javascripts']
+    })
+    .bundle()
+    .pipe(source('aaplication.js'))
+    .pipe(gulp.dest('public/javascripts/'));
 });
 
 gulp.task('styles', function() {
