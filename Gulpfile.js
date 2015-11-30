@@ -4,7 +4,6 @@ var gulp = require('gulp');
 // initalize Plugins
 var clean = require('gulp-clean'),
   imagemin = require('gulp-imagemin'),
-  concat = require('gulp-concat'),
   uglify = require('gulp-uglifyjs'),
   autoprefixer = require('gulp-autoprefixer'),
   sass = require('gulp-sass'),
@@ -13,8 +12,7 @@ var clean = require('gulp-clean'),
   nunjucksRender = require('gulp-nunjucks-render'),
   browserSync = require('browser-sync').create(),
   reload = browserSync.reload,
-  browserify = require('browserify'),
-  source = require('vinyl-source-stream');
+  webpack = require('gulp-webpack');
 
 gulp.task('browser-sync', function() {
   browserSync.init({
@@ -41,14 +39,10 @@ gulp.task('clean', function() {
 });
 
 //Dev tasks
-gulp.task('browserify', function() {
-  return browserify({
-      entries: 'assets/javascripts/application.js',
-      paths: ['./node_modules', './assets/javascripts']
-    })
-    .bundle()
-    .pipe(source('aaplication.js'))
-    .pipe(gulp.dest('public/javascripts/'));
+gulp.task("webpack", function() {
+  return gulp.src('assets/javascripts/application.js')
+  .pipe(webpack(require('./webpack.config.js')))
+  .pipe(gulp.dest('public/javascripts/'));
 });
 
 gulp.task('styles', function() {
@@ -83,7 +77,7 @@ gulp.task('optim', ['images'], function() {
     .pipe(gulp.dest('public/images'));
 });
 
-gulp.task('uglify', ['browserify'], function() {
+gulp.task('uglify', ['webpack'], function() {
   return gulp.src('public/javascripts/*.js')
     .pipe(uglify())
     .pipe(gulp.dest('public/javascripts/'));
@@ -95,7 +89,7 @@ gulp.task('minify', ['styles'], function() {
     .pipe(gulp.dest('public/stylesheets/'));
 });
 
-gulp.task('dev', ['layout', 'styles', 'browserify', 'images', 'browser-sync', 'watch']);
+gulp.task('dev', ['layout', 'styles', 'webpack', 'images', 'browser-sync', 'watch']);
 gulp.task('build', ['layout', 'minify', 'uglify', 'optim']);
 
 gulp.task('default', ['clean'], function() {
