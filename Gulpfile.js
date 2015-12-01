@@ -24,8 +24,8 @@ gulp.task('browser-sync', function() {
 
 //watch for changes
 gulp.task('watch', function() {
-  gulp.watch('assets/stylesheets/*.scss', ['styles']);
-  gulp.watch('assets/javascript/*.js', ['browserify']);
+  gulp.watch('assets/stylesheets/**/*.scss', ['styles']);
+  gulp.watch('assets/javascript/**/*.js', ['webpack']);
   gulp.watch('assets/images/**/*', ['images']);
   gulp.watch('views/**/*.html', ['layout']);
 });
@@ -41,8 +41,11 @@ gulp.task('clean', function() {
 //Dev tasks
 gulp.task("webpack", function() {
   return gulp.src('assets/javascripts/application.js')
-  .pipe(webpack(require('./webpack.config.js')))
-  .pipe(gulp.dest('public/javascripts/'));
+    .pipe(webpack(require('./webpack.config.js')))
+    .pipe(gulp.dest('public/javascripts/'))
+    .pipe(reload({
+      stream: true
+    }));
 });
 
 gulp.task('styles', function() {
@@ -51,7 +54,10 @@ gulp.task('styles', function() {
     .pipe(autoprefixer({
       browsers: ['> 1%', 'last 2 versions']
     }))
-    .pipe(gulp.dest('public/stylesheets/'));
+    .pipe(gulp.dest('public/stylesheets/'))
+    .pipe(reload({
+      stream: true
+    }));
 });
 
 gulp.task('layout', function() {

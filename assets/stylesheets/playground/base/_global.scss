@@ -1,0 +1,33 @@
+/*
+
+Global
+------
+
+General fonts and other global styles of the page.
+
+*/
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'PT Serif', serif;
+  font-size: 62.5%;
+  line-height: 1.5;
+  position: relative;
+}
+
+html,
+body {
+  color: #444;
+  height: 100%;
+}
+
+body {
+  background: #fff;
+  overflow-x: hidden;
+}

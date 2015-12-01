@@ -1,0 +1,27 @@
+.Playbook {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  font-size: 20px;
+  color: #2f3d45;
+  overflow-x: hidden;
+}
+
+.Playbook-wrapper {
+  display: flex;
+}
+
+.Playbook-aside {
+
+}
+
+.Playbook-content {
+  padding: 40px 0;
+}
+
+
+.Playbook-inner {
+  margin: 0 auto;
+  max-width: 1200px;
+}

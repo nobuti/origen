@@ -1,4 +1,16 @@
-/* 1. Reset */
+/*
+  none - Phone
+  ps - Phablet
+  ts - Tablet
+  ms - Minidesktop
+  bs - Big screen size
+*/
+/* Responsive mixin
+   ----------------
+  @include min-screen(320) {
+    width: 300px;
+  }
+*/
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
 * 1. Set default font family to sans-serif.
@@ -275,7 +287,6 @@ td,
 th {
   padding: 0; }
 
-/* 4. Base */
 /*
 
 Global
@@ -291,7 +302,7 @@ General fonts and other global styles of the page.
 
 html {
   box-sizing: border-box;
-  font-family: "PT Sans", sans-serif;
+  font-family: 'PT Serif', serif;
   font-size: 62.5%;
   line-height: 1.5;
   position: relative; }
@@ -302,8 +313,135 @@ body {
   height: 100%; }
 
 body {
-  background: #eee;
+  background: #fff;
   overflow-x: hidden; }
+
+.Playbook {
+  color: #484848;
+  font-size: 1.6em;
+  line-height: 1.5;
+  /* avoid last-child bottom margin */
+  /* avoid supp margin on nested elements */
+  /* you shall not pass */ }
+  .Playbook p,
+  .Playbook ul,
+  .Playbook ol,
+  .Playbook dl,
+  .Playbook blockquote,
+  .Playbook pre,
+  .Playbook td,
+  .Playbook th,
+  .Playbook textarea {
+    font-size: 1em;
+    /* equiv 16px */
+    line-height: 1.5;
+    margin: 1.5em 0; }
+  .Playbook h1,
+  .Playbook .h1-like {
+    font-size: 1.75em;
+    /* equiv 28px */
+    line-height: 1.7142;
+    margin: 1.7142em 0 0.8571em; }
+  .Playbook h2,
+  .Playbook .h2-like {
+    font-size: 1.625em;
+    /* equiv 26px */
+    line-height: 1.8462;
+    margin: 1.8462em 0 0.9231em; }
+  .Playbook h3,
+  .Playbook .h3-like {
+    font-size: 1.5em;
+    /* equiv 24px */
+    line-height: 1;
+    margin: 2em 0 1em; }
+  .Playbook h4,
+  .Playbook .h4-like {
+    font-size: 1.375em;
+    /* equiv 22px */
+    line-height: 1.0909;
+    margin: 2.1818em 0 1.0909em; }
+  .Playbook h5,
+  .Playbook .h5-like {
+    font-size: 1.25em;
+    /* equiv 20px */
+    line-height: 1.2;
+    margin: 2.4em 0 1.2em; }
+  .Playbook h6,
+  .Playbook .h6-like {
+    font-size: 1.125em;
+    /* equiv 18px */
+    line-height: 1.3333;
+    margin: 2.6666em 0 1.3333em; }
+  .Playbook .smaller {
+    font-size: 0.75em;
+    /* equiv 12px */
+    line-height: 2;
+    margin: 2em 0; }
+  .Playbook .small {
+    font-size: 0.875em;
+    /* equiv 14px */
+    line-height: 1.7143;
+    margin: 1.7143em 0; }
+  .Playbook .big {
+    font-size: 1.125em;
+    /* equiv 18px */
+    line-height: 1.3333;
+    margin: 1.3333em 0; }
+  .Playbook .bigger {
+    font-size: 1.25em;
+    /* equiv 20px */
+    line-height: 1.2;
+    margin: 1.2em 0; }
+  .Playbook .biggest {
+    font-size: 1.375em;
+    /* equiv 22px */
+    line-height: 1.0909;
+    margin: 1.0909em 0; }
+  .Playbook h1:first-child,
+  .Playbook h2:first-child,
+  .Playbook h3:first-child,
+  .Playbook h4:first-child,
+  .Playbook h5:first-child,
+  .Playbook h6:first-child {
+    margin-top: 0; }
+  .Playbook p:last-child,
+  .Playbook ul:last-child,
+  .Playbook ol:last-child,
+  .Playbook dl:last-child,
+  .Playbook blockquote:last-child,
+  .Playbook pre:last-child,
+  .Playbook table:last-child {
+    margin-bottom: 0; }
+  .Playbook li,
+  .Playbook p {
+    font-size: 0.938em; }
+  .Playbook li p,
+  .Playbook li ul {
+    margin-bottom: 0;
+    margin-top: 0; }
+  .Playbook textarea,
+  .Playbook table,
+  .Playbook td,
+  .Playbook th,
+  .Playbook code,
+  .Playbook pre,
+  .Playbook samp,
+  .Playbook div,
+  .Playbook p {
+    -webkit-hyphens: auto;
+       -moz-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
+    word-wrap: break-word; }
+  .Playbook code,
+  .Playbook pre,
+  .Playbook samp {
+    font-family: consolas, courier, monospace;
+    white-space: pre-wrap; }
+  .Playbook code {
+    line-height: 1; }
+  .Playbook table {
+    margin-bottom: 1.5em; }
 
 /*
 
@@ -313,21 +451,25 @@ List
 Reset default styles on lists.
 
 */
-ul {
-  list-style: none;
+.Playbook ul {
+  list-style-type: hiragana-iroha;
+  list-style-position: inside;
   margin: 0;
   padding: 0; }
 
-/*
+.Playbook ul.is-normal {
+  list-style-type: initial; }
 
-Headings
---------
-
-h1, h2, h3, h4, h5, h6 headings styles.
-
-*/
-h1, h2, h3, h4, h5, h6 {
-  margin: 0; }
+.Playbook ul.is-inline {
+  list-style: none; }
+  .Playbook ul.is-inline:before, .Playbook ul.is-inline:after {
+    content: "";
+    display: table;
+    line-height: 0; }
+  .Playbook ul.is-inline:after {
+    clear: both; }
+  .Playbook ul.is-inline li {
+    float: left; }
 
 /*
 
@@ -337,30 +479,446 @@ Link
 Links styles.
 
 */
-a {
+.Playbook a {
+  color: #00a5d4;
   cursor: pointer;
-  text-decoration: none; }
-  a:hover {
-    text-decoration: underline; }
+  text-decoration: underline; }
+  .Playbook a:hover {
+    text-decoration: none; }
 
-/*
+.u-underline {
+  text-decoration: underline; }
 
-Label
------
+.Grid {
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 1200px;
+  margin: 0 auto; }
 
-Label styles.
+.Row {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin-left: -20px;
+  margin-right: -20px; }
 
-*/
-label {
-  cursor: pointer; }
+.Col-auto {
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-box-flex: 1 !important;
+  -webkit-flex: 1 1 0px !important;
+      -ms-flex: 1 1 0px !important;
+          flex: 1 1 0px !important; }
 
-/*
+.Row > div {
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%; }
 
-Paragraph
----------
+.Col-xs-1 {
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-flex-basis: 8.33333% !important;
+      -ms-flex-preferred-size: 8.33333% !important;
+          flex-basis: 8.33333% !important; }
 
-Reset default styles on paragraphs.
+.Col-xs-2 {
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-flex-basis: 16.66667% !important;
+      -ms-flex-preferred-size: 16.66667% !important;
+          flex-basis: 16.66667% !important; }
 
-*/
-p {
-  margin-top: 0; }
+.Col-xs-3 {
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-flex-basis: 25% !important;
+      -ms-flex-preferred-size: 25% !important;
+          flex-basis: 25% !important; }
+
+.Col-xs-4 {
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-flex-basis: 33.33333% !important;
+      -ms-flex-preferred-size: 33.33333% !important;
+          flex-basis: 33.33333% !important; }
+
+.Col-xs-5 {
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-flex-basis: 41.66667% !important;
+      -ms-flex-preferred-size: 41.66667% !important;
+          flex-basis: 41.66667% !important; }
+
+.Col-xs-6 {
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-flex-basis: 50% !important;
+      -ms-flex-preferred-size: 50% !important;
+          flex-basis: 50% !important; }
+
+.Col-xs-7 {
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-flex-basis: 58.33333% !important;
+      -ms-flex-preferred-size: 58.33333% !important;
+          flex-basis: 58.33333% !important; }
+
+.Col-xs-8 {
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-flex-basis: 66.66667% !important;
+      -ms-flex-preferred-size: 66.66667% !important;
+          flex-basis: 66.66667% !important; }
+
+.Col-xs-9 {
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-flex-basis: 75% !important;
+      -ms-flex-preferred-size: 75% !important;
+          flex-basis: 75% !important; }
+
+.Col-xs-10 {
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-flex-basis: 83.33333% !important;
+      -ms-flex-preferred-size: 83.33333% !important;
+          flex-basis: 83.33333% !important; }
+
+.Col-xs-11 {
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-flex-basis: 91.66667% !important;
+      -ms-flex-preferred-size: 91.66667% !important;
+          flex-basis: 91.66667% !important; }
+
+.Col-xs-offset-1 {
+  margin-left: 8.33333%; }
+
+.Col-xs-offset-2 {
+  margin-left: 16.66667%; }
+
+.Col-xs-offset-3 {
+  margin-left: 25%; }
+
+.Col-xs-offset-4 {
+  margin-left: 33.33333%; }
+
+.Col-xs-offset-5 {
+  margin-left: 41.66667%; }
+
+.Col-xs-offset-6 {
+  margin-left: 50%; }
+
+.Col-xs-offset-7 {
+  margin-left: 58.33333%; }
+
+.Col-xs-offset-8 {
+  margin-left: 66.66667%; }
+
+.Col-xs-offset-9 {
+  margin-left: 75%; }
+
+.Col-xs-offset-10 {
+  margin-left: 83.33333%; }
+
+.Col-xs-offset-11 {
+  margin-left: 91.66667%; }
+
+@media (min-width: 768px) {
+  .Col-sm-1 {
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-flex-basis: 8.33333% !important;
+        -ms-flex-preferred-size: 8.33333% !important;
+            flex-basis: 8.33333% !important; }
+  .Col-sm-2 {
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-flex-basis: 16.66667% !important;
+        -ms-flex-preferred-size: 16.66667% !important;
+            flex-basis: 16.66667% !important; }
+  .Col-sm-3 {
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-flex-basis: 25% !important;
+        -ms-flex-preferred-size: 25% !important;
+            flex-basis: 25% !important; }
+  .Col-sm-4 {
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-flex-basis: 33.33333% !important;
+        -ms-flex-preferred-size: 33.33333% !important;
+            flex-basis: 33.33333% !important; }
+  .Col-sm-5 {
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-flex-basis: 41.66667% !important;
+        -ms-flex-preferred-size: 41.66667% !important;
+            flex-basis: 41.66667% !important; }
+  .Col-sm-6 {
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-flex-basis: 50% !important;
+        -ms-flex-preferred-size: 50% !important;
+            flex-basis: 50% !important; }
+  .Col-sm-7 {
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-flex-basis: 58.33333% !important;
+        -ms-flex-preferred-size: 58.33333% !important;
+            flex-basis: 58.33333% !important; }
+  .Col-sm-8 {
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-flex-basis: 66.66667% !important;
+        -ms-flex-preferred-size: 66.66667% !important;
+            flex-basis: 66.66667% !important; }
+  .Col-sm-9 {
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-flex-basis: 75% !important;
+        -ms-flex-preferred-size: 75% !important;
+            flex-basis: 75% !important; }
+  .Col-sm-10 {
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-flex-basis: 83.33333% !important;
+        -ms-flex-preferred-size: 83.33333% !important;
+            flex-basis: 83.33333% !important; }
+  .Col-sm-11 {
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-flex-basis: 91.66667% !important;
+        -ms-flex-preferred-size: 91.66667% !important;
+            flex-basis: 91.66667% !important; }
+  .Col-sm-offset-1 {
+    margin-left: 8.33333%; }
+  .Col-sm-offset-2 {
+    margin-left: 16.66667%; }
+  .Col-sm-offset-3 {
+    margin-left: 25%; }
+  .Col-sm-offset-4 {
+    margin-left: 33.33333%; }
+  .Col-sm-offset-5 {
+    margin-left: 41.66667%; }
+  .Col-sm-offset-6 {
+    margin-left: 50%; }
+  .Col-sm-offset-7 {
+    margin-left: 58.33333%; }
+  .Col-sm-offset-8 {
+    margin-left: 66.66667%; }
+  .Col-sm-offset-9 {
+    margin-left: 75%; }
+  .Col-sm-offset-10 {
+    margin-left: 83.33333%; }
+  .Col-sm-offset-11 {
+    margin-left: 91.66667%; } }
+
+.Playbook-header {
+  background: #eef4f8; }
+
+.Playbook-logo {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center; }
+  .Playbook-logo img {
+    display: block; }
+
+.Playbook-nav {
+  color: #6692A9;
+  margin: 0;
+  text-align: right; }
+  .Playbook-nav li {
+    display: inline-block; }
+  .Playbook-nav a {
+    background-color: rgba(255, 255, 255, 0);
+    color: inherit;
+    display: block;
+    line-height: 60px;
+    padding: 0 20px;
+    position: relative;
+    text-decoration: none; }
+    .Playbook-nav a:hover {
+      background-color: rgba(255, 255, 255, 0.35); }
+  .Playbook-nav .is-active a:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #6692A9;
+    height: 4px;
+    width: 100%; }
+
+.Playbook {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  font-size: 20px;
+  color: #2f3d45;
+  overflow-x: hidden; }
+
+.Playbook-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.Playbook-content {
+  padding: 40px 0; }
+
+.Playbook-inner {
+  margin: 0 auto;
+  max-width: 1200px; }
+
+.Playbook pre {
+  margin: 0; }
+
+code:not(.css),
+code:not(.js),
+code:not(.hljs) {
+  background: #d770ad;
+  border-radius: 3px;
+  color: #fff;
+  font-family: Menlo, Monaco, Lucida Console, monospace;
+  font-size: 0.825em;
+  line-height: 1.2;
+  padding: 3px 4px;
+  word-wrap: break-word; }
+
+.Playbook .hljs {
+  background-color: transparent;
+  color: #4b8b8b;
+  display: block;
+  font-family: Menlo, Monaco, Lucida Console, monospace;
+  font-size: 0.825em;
+  line-height: 1.2;
+  max-width: 650px;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  word-wrap: break-word; }
+
+/* Base16 Atelier Plateau Light - Theme */
+/* by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/plateau) */
+/* Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16) */
+/* Atelier-Plateau Comment */
+.hljs-comment,
+.hljs-quote {
+  color: #655d5d; }
+
+.hljs-class {
+  color: #4b8b8b; }
+
+/* Atelier-Plateau Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-attribute,
+.hljs-tag,
+.hljs-name,
+.hljs-regexp,
+.hljs-link,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #ca4949; }
+
+/* Atelier-Plateau Orange */
+.hljs-value,
+.hljs-number,
+.hljs-meta,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params {
+  color: #b45a3c; }
+
+/* Atelier-Plateau Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet {
+  color: #4b8b8b; }
+
+/* Atelier-Plateau Blue */
+.hljs-title,
+.hljs-section {
+  color: #7272ca; }
+
+/* Atelier-Plateau Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #8464c4; }
+
+.hljs-deletion,
+.hljs-addition {
+  color: #1b1818;
+  display: inline-block;
+  width: 100%; }
+
+.hljs-deletion {
+  background-color: #ca4949; }
+
+.hljs-addition {
+  background-color: #4b8b8b; }
+
+.hljs-emphasis {
+  font-style: italic; }
+
+.hljs-strong {
+  font-weight: bold; }
+
+.u-showPhone {
+  display: block; }
+
+.u-hidePhone {
+  display: none; }
+  @media (min-width: 768px) {
+    .u-hidePhone {
+      display: block; } }
+
+@media (min-width: 768px) {
+  .u-hideDesktop {
+    display: none; } }
+
+.Extended {
+  background-color: #eef4f8;
+  padding: 40px 200%;
+  margin: 1.5em -200%; }

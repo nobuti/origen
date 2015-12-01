@@ -1,0 +1,18 @@
+/*
+
+Link
+----
+
+Links styles.
+
+*/
+
+.Playbook a {
+  color: #00a5d4;
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

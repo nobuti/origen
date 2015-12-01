@@ -1,0 +1,31 @@
+{% extends "layout/application.html" %}
+
+{% set section = "about" %}
+
+{% block scripts %}
+{% endblock %}
+
+{% block maincontent %}
+
+<div class="Grid">
+  <div class="Row">
+    <div class="Col-auto">
+      <h1>About this styleguide</h1>
+
+      <p>As the Be Mate team grows, it will become increasingly important to maintain a consistent style and visual language across all areas of the product. To do this, we have built the following style guide to document reusable components for faster product development.</p>
+
+      <p>This style guide is based largely on the principles of atomic design. The key idea of this methodology is that small, independent parts, can be combined into larger patterns. Patterns lately are the foundation for templates and full pages.</p>
+
+      <p>By documenting and assembling a reference site of our patterns, we were able to speed up our process. This brings huge benefits us in a few ways:
+
+      <ul>
+        <li>We can <strong>build consistently</strong>, focusing our energy on workflows and logic.</li>
+        <li>We can <strong>reuse code</strong> instead of reinventing the wheel.</li>
+        <li>We can see all of our patterns in one place, quickly revealing <strong>maintenance</strong> issues.</li>
+      </ul>
+
+      <p>Our pattern collection is both a guide and a playground to experiment as we build new things. All the styles, rules and approaches described here result from our experience and are what fits our team at the moment. Ideally, we hope you take these suggestions and make them your own, adding your flavor to them to improve your own workflow as a team.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
