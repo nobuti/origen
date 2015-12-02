@@ -1,11 +1,13 @@
 .Playbook {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-weight: 400;
-  text-rendering: optimizeLegibility;
-  font-size: 20px;
+  background-color: #fff;
   color: #2f3d45;
+  font-family: 'PT Serif', serif;
+  font-size: 20px;
+  font-weight: 400;
   overflow-x: hidden;
+  text-rendering: optimizeLegibility;
 }
 
 .Playbook-wrapper {

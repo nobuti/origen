@@ -25,7 +25,7 @@ gulp.task('browser-sync', function() {
 //watch for changes
 gulp.task('watch', function() {
   gulp.watch('assets/stylesheets/**/*.scss', ['styles']);
-  gulp.watch('assets/javascript/**/*.js', ['webpack']);
+  gulp.watch('assets/javascripts/**/*.js', ['webpack']);
   gulp.watch('assets/images/**/*', ['images']);
   gulp.watch('views/**/*.html', ['layout']);
 });

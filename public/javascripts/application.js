@@ -46,16 +46,13 @@
 
 	var $ = __webpack_require__(1);
 	var hljs = __webpack_require__(2);
-	console.log(hljs);
 
 	var foo = __webpack_require__(141);
 
 	$(function(){
 	  foo.attachTo("body");
 
-	  $('pre code').each(function(i, block) {
-	    hljs.highlightBlock(block);
-	  });
+	  hljs.initHighlightingOnLoad();
 	});
 
 
