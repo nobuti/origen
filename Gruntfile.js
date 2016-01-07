@@ -19,7 +19,7 @@ module.exports = function(grunt) {
           outputStyle: 'expanded'
         },
         files: {
-          'public/stylesheets/sandbox.css': 'sass/sandbox/sandbox.scss'
+          'public/stylesheets/sandbox.css': 'assets/sass/sandbox/sandbox.scss'
         }
       },
       dist: {
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
           outputStyle: 'compressed'
         },
         files: {
-          'public/stylesheets/sandbox.css': 'sass/sandbox/sandbox.scss'
+          'public/stylesheets/sandbox.css': 'assets/sass/sandbox/sandbox.scss'
         }
       }
     },
@@ -47,7 +47,7 @@ module.exports = function(grunt) {
       },
 
       sass: {
-        files: ['sass/**/*.scss', 'views/**/*.html'],
+        files: ['assets/sass/**/*.scss', 'views/**/*.html'],
         tasks: ['sass:dev', 'autoprefixer'],
         options: {
           livereload: true,
@@ -82,7 +82,7 @@ module.exports = function(grunt) {
       all: {
         src: 'assets/sprites/*.png',
         destImg: 'public/images/sprites.png',
-        destCSS: 'sass/objects/_sprites.scss',
+        destCSS: 'assets/sass/objects/_sprites.scss',
         imgPath: '/images/sprites.png'
       }
     },
