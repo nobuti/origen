@@ -1,5 +1,4 @@
 var $ = require('jquery');
-var hljs = require('highlight.js');
 
 var foo = require('./components/foo');
 
