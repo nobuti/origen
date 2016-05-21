@@ -1,21 +1,21 @@
 {
-  "name": "Bemate",
+  "name": "Origen",
   "version": "0.5.0",
-  "description": "Bemate playground",
+  "description": "Bootstrap tool with express, sass and livereload.",
   "main": "",
   "scripts": {
     "deploy": "sh deploy.sh"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nobuti/funky.git"
+    "url": "https://github.com/nobuti/origen.git"
   },
   "author": "Buti",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nobuti/funky/issues"
+    "url": "https://github.com/nobuti/origen/issues"
   },
-  "homepage": "https://github.com/nobuti/funky",
+  "homepage": "https://github.com/nobuti/origen",
   "devDependencies": {
     "browser-sync": "^2.10.0",
     "gulp": "^3.9.0",
@@ -29,12 +29,12 @@
     "gulp-util": "^3.0.7",
     "gulp-webpack": "^1.5.0",
     "highlight.js": "^8.9.1",
-    "webpack": "^1.12.9"
+    "webpack": "^1.12.9",
+    "jquery": "^2.1.4"
   },
   "dependencies": {
     "basic-auth": "^1.0.3",
     "compression": "^1.6.0",
-    "express": "^4.13.3",
-    "jquery": "^2.1.4"
+    "express": "^4.13.3"
   }
 }

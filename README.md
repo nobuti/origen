@@ -1,17 +1,36 @@
-# Be Mate Playground
+# Origen
 
-Boilerplate to create quick and dirty mockups. It uses Gulp, browserify to bundle all javascript files, sass to compile stylesheets and nunjucks for html templating.
+Sandbox tooling made with express, sass, grunt and love. Ready for Heroku deployment.
 
-#### Directorios:
+## Requirements
 
-- build Directorio con todos los ficheros JS y CSS.
+You'll need to have the following items installed before continuing.
 
-#### Iniciar el proyecto
+  * [Node.js](http://nodejs.org): Use the installer provided on the NodeJS website.
+  * [Gulp](http://gulpjs.com/): Run `[sudo] npm install --global gulp-cli`
 
-El proyecto se ha desarrollado utilizando Gulp (http://gulpjs.com/) que se basa en NodeJS (http://nodejs.org/)
+## Quickstart
 
-1. Instalar NodeJS
-2. Instalar Gulp (https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
-3. Instalar todas las dependencias con ```"npm install"```
-4. Ejecutar mediante ```"gulp"```
+```bash
+git clone git@github.com:nobuti/origen.git
+npm install
+```
 
+While you're working on your project, run:
+
+`gulp`
+
+And you're set!
+
+## Directory Structure
+
+  * `assets/`: Assets files like images, javascripts or sass files.
+  * `public/`: Public assets, linked from views. Includes stylesheets and javascripts folders. The static html files are served from this directory.
+  * `views/`: Html views flawored as nunjucks files. Include partial and layout folders.
+  * `index.js`: Express file.
+  * `webpack.config.js`: Webpack config to bundle the js.
+  * `Gulpfile.js`: Gulp task runner.
+
+## Heroku support
+
+Add the remote branch in heroku and then `npm run deploy`.
