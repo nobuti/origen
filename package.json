@@ -3,9 +3,6 @@
   "version": "0.5.0",
   "description": "Bootstrap tool with express, sass and livereload.",
   "main": "",
-  "scripts": {
-    "deploy": "sh deploy.sh"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/nobuti/origen.git"
@@ -21,6 +18,7 @@
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-clean": "^0.3.1",
+    "gulp-gh-pages": "^0.5.4",
     "gulp-imagemin": "^2.4.0",
     "gulp-minify-css": "^1.2.1",
     "gulp-nunjucks-render": "^1.0.0",
@@ -29,8 +27,8 @@
     "gulp-util": "^3.0.7",
     "gulp-webpack": "^1.5.0",
     "highlight.js": "^8.9.1",
-    "webpack": "^1.12.9",
-    "jquery": "^2.1.4"
+    "jquery": "^2.1.4",
+    "webpack": "^1.12.9"
   },
   "dependencies": {
     "basic-auth": "^1.0.3",

@@ -12,7 +12,8 @@ var clean = require('gulp-clean'),
   nunjucksRender = require('gulp-nunjucks-render'),
   browserSync = require('browser-sync').create(),
   reload = browserSync.reload,
-  webpack = require('gulp-webpack');
+  webpack = require('gulp-webpack'),
+  ghPages = require('gulp-gh-pages');
 
 gulp.task('browser-sync', function() {
   browserSync.init({
@@ -93,6 +94,11 @@ gulp.task('minify', ['styles'], function() {
   return gulp.src('public/stylesheets/*.css')
     .pipe(minify())
     .pipe(gulp.dest('public/stylesheets/'));
+});
+
+gulp.task('deploy', ['layout', 'styles', 'webpack', 'images'], function() {
+  return gulp.src('./public/**/*')
+    .pipe(ghPages());
 });
 
 gulp.task('dev', ['layout', 'styles', 'webpack', 'images', 'browser-sync', 'watch']);

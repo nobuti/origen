@@ -31,6 +31,6 @@ And you're set!
   * `webpack.config.js`: Webpack config to bundle the js.
   * `Gulpfile.js`: Gulp task runner.
 
-## Heroku support
+## Github pages support
 
-Add the remote branch in heroku and then `npm run deploy`.
+`gulp deploy`
